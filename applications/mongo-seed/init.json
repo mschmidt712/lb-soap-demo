@@ -1,0 +1,16 @@
+[{
+  "name": "Hydrogen",
+  "abbr": "H",
+  "atomicNumber": 1,
+  "atomicWeight": 1.008
+}, {
+  "name": "Helium",
+  "abbr": "He",
+  "atomicNumber": 2,
+  "atomicWeight": 4.0026
+}, {
+  "name": "Lithium",
+  "abbr": "Li",
+  "atomicNumber": 3,
+  "atomicWeight": 6.94
+}]

@@ -1,0 +1,22 @@
+{
+  "projectName" : "periodic-application",
+  "dirName" : "periodicRest",
+  "lbVersion" : "3.x",
+  "template" : "empty-server",
+  "datasource": {
+    "name": "periodicRestService",
+    "connector": "mongodb",
+    "settings": {
+      "host": "mongo",
+      "port": 27017,
+      "username": "periodic",
+      "password": "",
+      "database": "periodic"
+    },
+    "installConnector": true
+  },
+  "swagger": {
+    "models": "all",
+    "datasource": "periodicRestService"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "periodicRestService": {
+    "host": "mongo",
+    "port": 27017,
+    "database": "periodic",
+    "username": "periodic",
+    "password": "",
+    "name": "periodicRestService",
+    "connector": "mongodb"
+  }
+}

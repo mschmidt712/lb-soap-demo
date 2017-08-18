@@ -1,0 +1,53 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: soap
+  labels:
+    app: soap
+spec:
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: soap
+    spec:
+      containers:
+      - image: 127.0.0.1:30400/soap:latest
+        name: soap
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000
+          name: soap
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: soap
+  labels:
+    app: soap
+spec:
+  ports:
+    - port: 3000
+      targetPort: 3000
+  selector:
+    app: soap
+  type: NodePort
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+ name: soap
+spec:
+  backend:
+    serviceName: soap
+    servicePort: 3000
+  rules:
+  - host: soap.192.168.99.100.xip.io
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: soap
+          servicePort: 3000

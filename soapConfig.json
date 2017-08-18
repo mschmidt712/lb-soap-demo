@@ -1,0 +1,23 @@
+{
+  "projectName" : "periodic-application",
+  "dirName" : "periodic",
+  "lbVersion" : "3.x",
+  "template" : "empty-server",
+  "datasource": {
+    "name": "periodicSoapService",
+    "connector": "soap",
+    "settings": {
+      "url": "http://www.webservicex.net/periodictable.asmx",
+      "wsdl": "http://www.webservicex.net/periodictable.asmx?WSDL",
+      "remotingEnabled": true,
+      "operations": ""
+    },
+    "installConnector": true
+  },
+  "soap": {
+    "datasource": "periodicSoapService",
+    "service": "periodictable",
+    "binding": "periodictableSoap",
+    "operations": "all"
+  }
+}

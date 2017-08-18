@@ -1,0 +1,52 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "GetAtoms": {
+    "dataSource": "periodicRestService",
+    "public": false
+  },
+  "GetAtomsResponse": {
+    "dataSource": "periodicRestService",
+    "public": false
+  },
+  "GetAtomicWeight": {
+    "dataSource": "periodicRestService",
+    "public": false
+  },
+  "GetAtomicWeightResponse": {
+    "dataSource": "periodicRestService",
+    "public": false
+  },
+  "GetAtomicNumber": {
+    "dataSource": "periodicRestService",
+    "public": false
+  },
+  "GetAtomicNumberResponse": {
+    "dataSource": "periodicRestService",
+    "public": false
+  },
+  "GetElementSymbol": {
+    "dataSource": "periodicRestService",
+    "public": false
+  },
+  "GetElementSymbolResponse": {
+    "dataSource": "periodicRestService",
+    "public": false
+  },
+  "soap_periodictableSoap": {
+    "dataSource": "periodicRestService",
+    "public": true
+  }
+}

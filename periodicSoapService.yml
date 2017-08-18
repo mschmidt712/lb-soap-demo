@@ -1,0 +1,142 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: periodic-application
+basePath: /api
+paths:
+  /periodictableSoap/GetAtoms:
+    post:
+      tags:
+        - soap_periodictableSoap
+      summary: GetAtoms
+      operationId: soap_periodictableSoap.GetAtoms
+      parameters:
+        - name: GetAtoms
+          in: body
+          description: GetAtoms
+          required: true
+          schema:
+            description: GetAtoms
+            $ref: '#/definitions/GetAtoms'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: GetAtomsResponse
+            $ref: '#/definitions/GetAtomsResponse'
+      deprecated: false
+  /periodictableSoap/GetAtomicWeight:
+    post:
+      tags:
+        - soap_periodictableSoap
+      summary: GetAtomicWeight
+      operationId: soap_periodictableSoap.GetAtomicWeight
+      parameters:
+        - name: GetAtomicWeight
+          in: body
+          description: GetAtomicWeight
+          required: true
+          schema:
+            description: GetAtomicWeight
+            $ref: '#/definitions/GetAtomicWeight'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: GetAtomicWeightResponse
+            $ref: '#/definitions/GetAtomicWeightResponse'
+      deprecated: false
+  /periodictableSoap/GetAtomicNumber:
+    post:
+      tags:
+        - soap_periodictableSoap
+      summary: GetAtomicNumber
+      operationId: soap_periodictableSoap.GetAtomicNumber
+      parameters:
+        - name: GetAtomicNumber
+          in: body
+          description: GetAtomicNumber
+          required: true
+          schema:
+            description: GetAtomicNumber
+            $ref: '#/definitions/GetAtomicNumber'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: GetAtomicNumberResponse
+            $ref: '#/definitions/GetAtomicNumberResponse'
+      deprecated: false
+  /periodictableSoap/GetElementSymbol:
+    post:
+      tags:
+        - soap_periodictableSoap
+      summary: GetElementSymbol
+      operationId: soap_periodictableSoap.GetElementSymbol
+      parameters:
+        - name: GetElementSymbol
+          in: body
+          description: GetElementSymbol
+          required: true
+          schema:
+            description: GetElementSymbol
+            $ref: '#/definitions/GetElementSymbol'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: GetElementSymbolResponse
+            $ref: '#/definitions/GetElementSymbolResponse'
+      deprecated: false
+tags:
+  - name: soap_periodictableSoap
+consumes:
+  - application/json
+  - application/x-www-form-urlencoded
+  - application/xml
+  - text/xml
+produces:
+  - application/json
+  - application/xml
+  - text/xml
+  - application/javascript
+  - text/javascript
+definitions:
+  GetAtoms:
+    properties: {}
+    additionalProperties: false
+  GetAtomsResponse:
+    properties:
+      GetAtomsResult:
+        type: string
+    additionalProperties: false
+  GetAtomicWeight:
+    properties:
+      ElementName:
+        type: string
+    additionalProperties: false
+  GetAtomicWeightResponse:
+    properties:
+      GetAtomicWeightResult:
+        type: string
+    additionalProperties: false
+  GetAtomicNumber:
+    properties:
+      ElementName:
+        type: string
+    additionalProperties: false
+  GetAtomicNumberResponse:
+    properties:
+      GetAtomicNumberResult:
+        type: string
+    additionalProperties: false
+  GetElementSymbol:
+    properties:
+      ElementName:
+        type: string
+    additionalProperties: false
+  GetElementSymbolResponse:
+    properties:
+      GetElementSymbolResult:
+        type: string
+    additionalProperties: false

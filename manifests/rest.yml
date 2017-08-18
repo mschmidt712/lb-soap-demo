@@ -1,0 +1,118 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: mongo
+  labels:
+    app: mongo
+spec:
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: mongo
+    spec:
+      containers:
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: mongo
+  labels:
+    app: mongo
+spec:
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: mongo
+    spec:
+      containers:
+      - image: mongo:latest
+        name: mongo
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 27017
+          name: mongo
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongo
+  labels:
+    app: mongo
+spec:
+  ports:
+    - port: 27017
+      targetPort: 27017
+  selector:
+    app: mongo
+  type: NodePort
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: mongo-seed
+spec:
+  template:
+    metadata:
+      name: mongo-seed
+    spec:
+      containers:
+      - name: mongo-seed
+        image: 127.0.0.1:30400/mongo-seed:latest
+      restartPolicy: Never
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: rest
+  labels:
+    app: rest
+spec:
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: rest
+    spec:
+      containers:
+      - image: 127.0.0.1:30400/rest:latest
+        name: rest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000
+          name: rest
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: rest
+  labels:
+    app: rest
+spec:
+  ports:
+    - port: 3000
+      targetPort: 3000
+  selector:
+    app: rest
+  type: NodePort
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+ name: rest
+spec:
+  backend:
+    serviceName: rest
+    servicePort: 3000
+  rules:
+  - host: rest.192.168.99.100.xip.io
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: rest
+          servicePort: 3000
