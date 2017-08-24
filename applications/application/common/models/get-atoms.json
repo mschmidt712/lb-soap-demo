@@ -1,0 +1,28 @@
+{
+  "name": "GetAtoms",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {},
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {
+    "get": {
+      "accepts": [],
+      "returns": {
+        "type": "array",
+        "root": true
+      },
+      "description": "This returns all the atoms of the periodic table",
+      "http": [
+        {
+          "path": "/",
+          "verb": "get"
+        }
+      ]
+    }
+  }
+}

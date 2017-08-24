@@ -71,7 +71,5 @@ lb swagger ../$soap_datasource_name.yml --config-file restConfig.json
 #Step 11
 #Move Applications into Applications Directory
 cd ../
-mkdir applications
-sleep 5
 mv $soap_directory_name/ applications/
 mv $rest_directory_name/ applications/

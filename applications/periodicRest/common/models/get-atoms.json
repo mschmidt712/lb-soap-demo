@@ -9,5 +9,40 @@
   "validations": [],
   "relations": {},
   "acls": [],
-  "methods": {}
+  "methods": {
+    "get": {
+      "accepts": [],
+      "returns": {
+        "type": "array",
+        "root": true
+      },
+      "description": "This returns the all the atoms in the database",
+      "http": [
+        {
+          "path": "/",
+          "verb": "get"
+        }
+      ]
+    },
+    "put": {
+      "accepts": [
+        {
+          "arg": "atoms",
+          "type": "array",
+          "http": {
+            "source": "body"
+          },
+          "default": "[\"Hydrogen\", \"Helium\"]"
+        }
+      ],
+      "returns": {},
+      "description": "This puts the atoms into the DB",
+      "http": [
+        {
+          "path": "/",
+          "verb": "put"
+        }
+      ]
+    }
+  }
 }

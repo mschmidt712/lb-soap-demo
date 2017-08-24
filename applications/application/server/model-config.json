@@ -13,6 +13,21 @@
       "./mixins"
     ]
   },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
   "GetAtoms": {
     "dataSource": "db",
     "public": true,
@@ -20,8 +35,7 @@
       "remoting": {
         "sharedMethods": {
           "*": false,
-          "get": true,
-          "put": true
+          "get": true
         }
       }
     }
@@ -33,8 +47,7 @@
       "remoting": {
         "sharedMethods": {
           "*": false,
-          "post": true,
-          "put": true
+          "post": true
         }
       }
     }
@@ -46,8 +59,7 @@
       "remoting": {
         "sharedMethods": {
           "*": false,
-          "post": true,
-          "put": true
+          "post": true
         }
       }
     }
@@ -59,8 +71,7 @@
       "remoting": {
         "sharedMethods": {
           "*": false,
-          "post": true,
-          "put": true
+          "post": true
         }
       }
     }

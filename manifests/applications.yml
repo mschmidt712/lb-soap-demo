@@ -49,70 +49,67 @@ spec:
     app: mongo
   type: NodePort
 ---
-apiVersion: batch/v1
-kind: Job
-metadata:
-  name: mongo-seed
-spec:
-  template:
-    metadata:
-      name: mongo-seed
-    spec:
-      containers:
-      - name: mongo-seed
-        image: 127.0.0.1:30400/mongo-seed:latest
-      restartPolicy: Never
----
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: rest
+  name: application-with-sidecars
   labels:
-    app: rest
+    app: application-with-sidecars
 spec:
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        app: rest
+        app: application-with-sidecars
     spec:
       containers:
+      - image: 127.0.0.1:30400/application:latest
+        name: application
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5000
+          name: application
       - image: 127.0.0.1:30400/rest:latest
         name: rest
         imagePullPolicy: Always
         ports:
-        - containerPort: 3000
+        - containerPort: 3001
           name: rest
-
+      - image: 127.0.0.1:30400/soap:latest
+        name: soap
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000
+          name: soap
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: rest
+  name: application
   labels:
-    app: rest
+    app: application-with-sidecars
 spec:
   ports:
-    - port: 3000
-      targetPort: 3000
+    - port: 5000
+      targetPort: 5000
   selector:
-    app: rest
+    app: application-with-sidecars
   type: NodePort
 ---
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
- name: rest
+ name: application
 spec:
   backend:
-    serviceName: rest
-    servicePort: 3000
+    serviceName: application
+    servicePort: 5000
   rules:
-  - host: rest.192.168.99.100.xip.io
+  - host: application.192.168.99.100.xip.io
     http:
       paths:
       - path: /
         backend:
-          serviceName: rest
-          servicePort: 3000
+          serviceName: application
+          servicePort: 5000

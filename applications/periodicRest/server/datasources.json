@@ -7,5 +7,15 @@
     "password": "",
     "name": "periodicRestService",
     "connector": "mongodb"
+  },
+  "db": {
+    "host": "mongo",
+    "port": 27017,
+    "url": "",
+    "database": "periodic",
+    "password": "",
+    "name": "db",
+    "user": "periodic",
+    "connector": "mongodb"
   }
 }

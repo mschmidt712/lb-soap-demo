@@ -36,30 +36,6 @@
           "verb": "post"
         }
       ]
-    },
-    "put": {
-      "accepts": [
-        {
-          "arg": "elementObj",
-          "type": "object",
-          "http": {
-            "source": "body"
-          },
-          "default": {
-            "elementName": "Potassium",
-            "description": "atomicWeight",
-            "atomicWeight": "3"
-          }
-        }
-      ],
-      "returns": {},
-      "description": "This puts the atomic weight into the DB",
-      "http": [
-        {
-          "path": "/",
-          "verb": "put"
-        }
-      ]
     }
   }
 }

@@ -1,15 +1,11 @@
 {
-  "name": "GetAtomsResponse",
-  "base": "PersistedModel",
+  "name": "periodicTable",
+  "base": "Model",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
-  "properties": {
-    "GetAtomsResult": {
-      "type": "string"
-    }
-  },
+  "properties": {},
   "validations": [],
   "relations": {},
   "acls": [],

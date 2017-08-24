@@ -4,7 +4,7 @@
   "lbVersion" : "3.x",
   "template" : "empty-server",
   "datasource": {
-    "name": "periodicRestService",
+    "name": "db",
     "connector": "mongodb",
     "settings": {
       "host": "mongo",
@@ -16,7 +16,7 @@
     "installConnector": true
   },
   "swagger": {
-    "models": "all",
-    "datasource": "periodicRestService"
+    "models": ["GetAtoms", "GetAtomicWeight", "GetAtomicNumber", "GetElementSymbol"],
+    "datasource": "db"
   }
 }

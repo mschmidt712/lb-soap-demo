@@ -1,5 +1,5 @@
 {
-  "name": "GetAtomicWeight",
+  "name": "GetElementSymbol",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -29,35 +29,11 @@
         "type": "string",
         "root": true
       },
-      "description": "This returns the atomic weight when given the element name",
+      "description": "This returns the element symbol when given the element name",
       "http": [
         {
           "path": "/",
           "verb": "post"
-        }
-      ]
-    },
-    "put": {
-      "accepts": [
-        {
-          "arg": "elementObj",
-          "type": "object",
-          "http": {
-            "source": "body"
-          },
-          "default": {
-            "elementName": "Potassium",
-            "description": "atomicWeight",
-            "atomicWeight": "3"
-          }
-        }
-      ],
-      "returns": {},
-      "description": "This puts the atomic weight into the DB",
-      "http": [
-        {
-          "path": "/",
-          "verb": "put"
         }
       ]
     }

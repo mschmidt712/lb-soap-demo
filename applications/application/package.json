@@ -1,5 +1,5 @@
 {
-  "name": "periodic-application",
+  "name": "application",
   "version": "1.0.0",
   "main": "server/server.js",
   "engines": {
@@ -7,7 +7,7 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "start": "node .",
+    "start": "nodemon .",
     "posttest": "npm run lint && nsp check"
   },
   "dependencies": {
@@ -17,16 +17,15 @@
     "loopback": "^3.0.0",
     "loopback-boot": "^2.6.5",
     "loopback-component-explorer": "^4.0.0",
-    "loopback-connector-soap": "^3.0.1",
     "request": "^2.81.0",
     "request-promise-native": "^1.0.4",
     "serve-favicon": "^2.0.1",
-    "strong-error-handler": "^2.0.0",
-    "xml2json": "^0.11.0"
+    "strong-error-handler": "^2.0.0"
   },
   "devDependencies": {
     "eslint": "^3.17.1",
     "eslint-config-loopback": "^8.0.0",
+    "nodemon": "^1.11.0",
     "nsp": "^2.1.0"
   },
   "repository": {
@@ -34,5 +33,5 @@
     "url": ""
   },
   "license": "UNLICENSED",
-  "description": "periodic-application"
+  "description": "application"
 }

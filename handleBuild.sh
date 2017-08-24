@@ -9,14 +9,6 @@ soap_directory_name=`echo $soap_directory | sed $string_regex`
 rest_directory=$(cat 'restConfig.json' | jq '.dirName')
 rest_directory_name=`echo $rest_directory | sed $string_regex`
 
-# Move Dockerfiles into correct directories
-printf "%40s\n" "${magenta}Moving Dockerfiles into correct directories${normal}"
-echo " "
-mv Dockerfile_rest applications/$rest_directory_name/Dockerfile
-mv Dockerfile_soap applications/$soap_directory_name/Dockerfile
-mv docker-compose.yml applications/$rest_directory_name
-sleep 5
-
 # Start up Kubernetes Cluster
 printf "%40s\n" "${magenta}Starting up Kubernetes Cluster using Minikube${normal}"
 minikube start
@@ -53,14 +45,14 @@ printf "%40s\n" "${magenta}Pushing Docker Image for the Rest Service to the Regi
 docker push 127.0.0.1:30400/rest:latest
 
 # Build Mongo Seed Container
-cd ../"mongo-seed"/
-printf "%40s\n" "${magenta}Building Docker Container for the Mongo Seed Service${normal}"
-docker build -t 127.0.0.1:30400/mongo-seed:latest .
+cd ../"application"/
+printf "%40s\n" "${magenta}Building Docker Container for the Application Service${normal}"
+docker build -t 127.0.0.1:30400/application:latest .
 sleep 5
 
 # Push Mongo Seed Container to Registry
-printf "%40s\n" "${magenta}Pushing Docker Image for the Mongo Seed Service to the Registry${normal}"
-docker push 127.0.0.1:30400/mongo-seed:latest
+printf "%40s\n" "${magenta}Pushing Docker Image for the Application Service to the Registry${normal}"
+docker push 127.0.0.1:30400/application:latest
 
 # All Images Pushed So We Can Shut Down the Proxy
 printf "%40s\n" "${magenta}All Images Pushed So We Can Shut Down the Proxy${normal}"
@@ -69,14 +61,12 @@ docker stop socat-registry;
 # Start Up the Pods for the Clusters
 cd ../../
 printf "%40s\n" "${magenta}Starting Up Pods for the Rest, Soap, and MongoDB Services${normal}"
-kubectl apply -f manifests/soap.yml
-kubectl apply -f manifests/rest.yml
+kubectl apply -f manifests/applications.yml
 
 # Waiting for Pods to Start Up
 printf "%40s\n" "${magenta}Wait for Pods to Start Up${normal}"
-kubectl rollout status deployments/soap
-kubectl rollout status deployments/rest
 kubectl rollout status deployments/mongo
+kubectl rollout status deployments/application-with-sidecars
 
 # Check for Pods on the Minikube Dashboard
 printf "%40s\n" "${magenta}Let's Open Up the Dashboard and Check that Our Pods Exist${normal}"
