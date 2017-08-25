@@ -22,7 +22,7 @@ module.exports = function(Getelementsymbol) {
   Getelementsymbol.put = function(element, cb) {
     Getelementsymbol.findOne({
       where: {
-        ElementName: element.name,
+        ElementName: element.ElementName,
       },
     }, (err, result) => {
       if (err) cb(err);

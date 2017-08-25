@@ -60,7 +60,7 @@ docker stop socat-registry;
 
 # Start Up the Pods for the Clusters
 cd ../../
-printf "%40s\n" "${magenta}Starting Up Pods for the Rest, Soap, and MongoDB Services${normal}"
+printf "%40s\n" "${magenta}Starting Up Pods for the Application and MongoDB Services${normal}"
 kubectl apply -f manifests/applications.yml
 
 # Waiting for Pods to Start Up
@@ -71,3 +71,7 @@ kubectl rollout status deployments/application-with-sidecars
 # Check for Pods on the Minikube Dashboard
 printf "%40s\n" "${magenta}Let's Open Up the Dashboard and Check that Our Pods Exist${normal}"
 minikube dashboard
+
+# Check for Pods on the Minikube Dashboard
+printf "%40s\n" "${magenta}Let's Open Up the Dashboard and Check that Our Pods Exist${normal}"
+minikube service application

@@ -22,7 +22,7 @@ module.exports = function(Getatomicweight) {
   Getatomicweight.put = function(element, cb) {
     Getatomicweight.findOne({
       where: {
-        ElementName: element.name,
+        ElementName: element.ElementName,
       },
     }, (err, result) => {
       if (err) cb(err);

@@ -22,7 +22,7 @@ module.exports = function(Getatomicnumber) {
   Getatomicnumber.put = function(element, cb) {
     Getatomicnumber.findOne({
       where: {
-        ElementName: element.name,
+        ElementName: element.ElementName,
       },
     }, (err, result) => {
       if (err) cb(err);

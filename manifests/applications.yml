@@ -96,20 +96,4 @@ spec:
   selector:
     app: application-with-sidecars
   type: NodePort
----
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
- name: application
-spec:
-  backend:
-    serviceName: application
-    servicePort: 5000
-  rules:
-  - host: application.192.168.99.100.xip.io
-    http:
-      paths:
-      - path: /
-        backend:
-          serviceName: application
-          servicePort: 5000
+
