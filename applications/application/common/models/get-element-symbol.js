@@ -30,12 +30,17 @@ module.exports = function(Getelementsymbol) {
 
     rp(rpOptions)
       .then(resp => {
+        let jsonResp;
         if (feature) {
-          cb(null, JSON.parse(resp));
+          jsonResp = JSON.parse(resp);
+          cb(null, jsonResp[0]);
         } else {
           const jsonObj = parser.toJson(resp.GetElementSymbolResult);
-          const jsonResp = JSON.parse(jsonObj).NewDataSet.Table;
-          cb(null, jsonResp);
+          jsonResp = JSON.parse(jsonObj).NewDataSet.Table;
+          const returnResp = Object.assign({}, jsonResp, {
+            ElementName: element,
+          });
+          cb(null, returnResp);
         }
       })
       .catch(err => {
