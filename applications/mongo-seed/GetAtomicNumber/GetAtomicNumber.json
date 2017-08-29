@@ -1,0 +1,55 @@
+[{
+  "AtomicNumber": "1",
+  "ElementName": "Hydrogen",
+  "Symbol": "H",
+  "AtomicWeight": "1.00797",
+  "BoilingPoint": "20.400000000000002",
+  "IonisationPotential": "13.6",
+  "EletroNegativity": "2.2",
+  "AtomicRadius": "0.37",
+  "MeltingPoint": "14",
+  "Density": "0.08375"
+}, {
+  "AtomicNumber": "2",
+  "ElementName": "Helium",
+  "Symbol": "He",
+  "AtomicWeight": "4.0026",
+  "BoilingPoint": "4.21",
+  "IonisationPotential": "24.580000000000002",
+  "AtomicRadius": "1.2",
+  "MeltingPoint": "1",
+  "Density": "0.1664"
+}, {
+  "AtomicNumber": "11",
+  "ElementName": "Sodium",
+  "Symbol": "Na",
+  "AtomicWeight": "22.9898",
+  "BoilingPoint": "1165",
+  "IonisationPotential": "5.14",
+  "EletroNegativity": "1.01",
+  "AtomicRadius": "1.57",
+  "MeltingPoint": "371",
+  "Density": "968"
+}, {
+  "AtomicNumber": "19",
+  "ElementName": "Potassium",
+  "Symbol": "K",
+  "AtomicWeight": "39.098",
+  "BoilingPoint": "1047",
+  "IonisationPotential": "4.34",
+  "EletroNegativity": "0.91",
+  "AtomicRadius": "2.0300000000000002",
+  "MeltingPoint": "337",
+  "Density": "856"
+}, {
+  "AtomicNumber": "29",
+  "ElementName": "Copper",
+  "Symbol": "Cu",
+  "AtomicWeight": "63.54",
+  "BoilingPoint": "2868",
+  "IonisationPotential": "7.73",
+  "EletroNegativity": "1.75",
+  "AtomicRadius": "1.17",
+  "MeltingPoint": "1356",
+  "Density": "8920"
+}]

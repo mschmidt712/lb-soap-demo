@@ -1,6 +1,6 @@
 {
-  "name": "periodicTable",
-  "base": "Model",
+  "name": "GetAtoms",
+  "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true

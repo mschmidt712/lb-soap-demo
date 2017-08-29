@@ -70,6 +70,22 @@ lb swagger ../$soap_datasource_name.yml --config-file restConfig.json
 
 #Step 11
 #Move Applications into Applications Directory
+echo " "
+printf "%40s\n" "${magenta}Moving Applications into the Applications Directory.${normal}"
 cd ../
 mv $soap_directory_name/ applications/
 mv $rest_directory_name/ applications/
+sleep 5
+
+#Step 11
+#Move Dockerfiles into Applications
+echo " "
+printf "%40s\n" "${magenta}Moving Dockerfiles into the Correct Applications.${normal}"
+mv docker/Dockerfile_soap applications/$soap_directory_name/Dockerfile
+mv docker/.dockerignore_soap applications/$soap_directory_name/.dockerignore
+mv docker/Dockerfile_mongo applications/$rest_directory_name/Dockerfile
+mv docker/.dockerignore_mongo applications/$rest_directory_name/.dockerignore
+mv docker/docker-compose.yml applications/$rest_directory_name/
+
+sleep 1
+rm docker/

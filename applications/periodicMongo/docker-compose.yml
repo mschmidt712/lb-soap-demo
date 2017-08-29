@@ -8,3 +8,8 @@ web:
     - "3001:3001"
   links:
     - mongo
+mongo-seed:
+  build: ../mongo-seed/
+  links:
+    - mongo
+    - web

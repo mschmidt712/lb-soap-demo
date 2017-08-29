@@ -47,7 +47,7 @@
       "remoting": {
         "sharedMethods": {
           "*": false,
-          "post": true
+          "get": true
         }
       }
     }
@@ -59,7 +59,7 @@
       "remoting": {
         "sharedMethods": {
           "*": false,
-          "post": true
+          "get": true
         }
       }
     }
@@ -71,7 +71,7 @@
       "remoting": {
         "sharedMethods": {
           "*": false,
-          "post": true
+          "get": true
         }
       }
     }

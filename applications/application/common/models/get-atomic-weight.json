@@ -14,15 +14,23 @@
   "relations": {},
   "acls": [],
   "methods": {
-    "post": {
+    "get": {
       "accepts": [
         {
           "arg": "element",
           "type": "string",
           "http": {
-            "source": "body"
+            "source": "query"
           },
           "default": "Potassium"
+        },
+        {
+          "arg": "feature",
+          "type": "boolean",
+          "http": {
+            "source": "query"
+          },
+          "default": false
         }
       ],
       "returns": {
@@ -33,7 +41,7 @@
       "http": [
         {
           "path": "/",
-          "verb": "post"
+          "verb": "get"
         }
       ]
     }

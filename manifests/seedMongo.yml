@@ -1,0 +1,56 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: get-atomic-number-seed
+spec:
+  template:
+    metadata:
+      name: get-atomic-number-seed
+    spec:
+      containers:
+      - name: get-atomic-number-seed
+        image: 127.0.0.1:30400/get-atomic-number:latest
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: get-atomic-weight-seed
+spec:
+  template:
+    metadata:
+      name: get-atomic-weight-seed
+    spec:
+      containers:
+      - name: get-atomic-weight-seed
+        image: 127.0.0.1:30400/get-atomic-weight:latest
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: get-atoms-seed
+spec:
+  template:
+    metadata:
+      name: get-atoms-seed
+    spec:
+      containers:
+      - name: get-atoms-seed
+        image: 127.0.0.1:30400/get-atoms:latest
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: get-element-symbol-seed
+spec:
+  template:
+    metadata:
+      name: get-element-symbol-seed
+    spec:
+      containers:
+      - name: get-element-symbol-seed
+        image: 127.0.0.1:30400/get-element-symbol:latest
+      restartPolicy: Never
+

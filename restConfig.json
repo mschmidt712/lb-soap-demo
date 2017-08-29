@@ -1,6 +1,6 @@
 {
   "projectName" : "periodic-application",
-  "dirName" : "periodicRest",
+  "dirName" : "periodicMongo",
   "lbVersion" : "3.x",
   "template" : "empty-server",
   "datasource": {

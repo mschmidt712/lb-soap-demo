@@ -11,7 +11,14 @@
   "acls": [],
   "methods": {
     "get": {
-      "accepts": [],
+      "accepts": [{
+        "arg": "feature",
+        "type": "boolean",
+        "http": {
+          "source": "query"
+        },
+        "default": false
+      }],
       "returns": {
         "type": "array",
         "root": true

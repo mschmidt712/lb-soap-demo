@@ -13,6 +13,10 @@
       "./mixins"
     ]
   },
+  "soap_periodictableSoap": {
+    "dataSource": null,
+    "public": true
+  },
   "GetAtoms": {
     "dataSource": null,
     "public": true
@@ -43,10 +47,6 @@
   },
   "GetElementSymbolResponse": {
     "dataSource": null,
-    "public": true
-  },
-  "periodicTable": {
-    "dataSource": "periodicSoapService",
     "public": true
   }
 }

@@ -12,4 +12,4 @@ RUN npm install
 COPY . /usr/src/app
 
 EXPOSE 3001
-CMD [ "npm", "start" ]
+CMD [ "node", "." ]
