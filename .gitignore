@@ -18,5 +18,5 @@ coverage
 node_modules
 npm-debug.log
 
-/applications/periodic/node_modules
-/applications/periodicRest/node_modules
+/applications/periodic
+/applications/periodicMongo
