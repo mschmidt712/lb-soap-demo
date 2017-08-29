@@ -86,6 +86,3 @@ mv docker/.dockerignore_soap applications/$soap_directory_name/.dockerignore
 mv docker/Dockerfile_mongo applications/$rest_directory_name/Dockerfile
 mv docker/.dockerignore_mongo applications/$rest_directory_name/.dockerignore
 mv docker/docker-compose.yml applications/$rest_directory_name/
-
-sleep 1
-rm docker/

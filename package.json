@@ -14,7 +14,7 @@
     "generate:swagger": "slc loopback:export-api-def --o test.yml"
   },
   "dependencies": {
-    "generator-loopback": "^4.0.1",
+    "generator-loopback": "git+https://github.com/mschmidt712/generator-loopback.git",
     "loopback": "^3.0.0",
     "loopback-cli": "^3.1.0",
     "strongloop": "^6.0.3"
